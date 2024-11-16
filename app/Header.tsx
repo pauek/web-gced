@@ -31,11 +31,11 @@ export default function Header() {
         <Image src={LogoUPC} alt="Logo UPC" width={250} height={80} />
       </Link>
       <div className="flex-1" />
-      <div className="flex flex-row gap-10 pr-10 text-blue-700 font-bold">
-        <_Link href="/"> Pàgina Principal</_Link>
-        <_Link href="/estadistiques">Estadístiques</_Link>
-        <_Link href="/estudiants">Estudiants</_Link>
-        <_Link href="/projectes">Projectes</_Link>
+      <div className="flex flex-row gap-10 pr-10 text-[#007BC0] font-bold">
+        <_Link href="/"> PÀGINA PRINCIPAL</_Link>
+        <_Link href="/estadistiques">ESTADÍSTIQUES</_Link>
+        <_Link href="/estudiants">ESTUDIANTS</_Link>
+        <_Link href="/projectes">PROJECTES</_Link>
       </div>
     </header>
   );
