@@ -11,8 +11,12 @@ datasource db {
 }
 
 model Alumni {
-    id          Int     @id @default(autoincrement())
-    firstName   String
-    lastName    String
-    linkedInURL String?
+    id              Int     @id @default(autoincrement())
+    firstName       String
+    lastName        String
+    linkedInURL     String?
+    generation      Int
+    review          String?
+    tfgTitle        String
+    tfgDescription  String
 }
