@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AlumniCard from "@/components/AlumniCard";
+import AlumniReview from "@/components/AlumniReview";
 import CompanyLogo from "@/components/CompanyLogo";
 import BannerMainStats from "@/components/BannerMainStats";
 
@@ -54,6 +55,23 @@ export default function Home() {
     },
   ];
 
+  const reviewsData = [
+    {
+      name: "Ignacio",
+      surname: "Gris",
+      generation: 2021,
+      description:
+        "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
+    },
+    {
+      name: "Laura",
+      surname: "Smith",
+      generation: 2024,
+      description:
+        "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
+    },
+  ];
+
   const [visibleIndex, setVisibleIndex] = useState(2);
 
   return (
@@ -83,35 +101,53 @@ export default function Home() {
         <h2 className="text-center text-2xl font-semibold mb-6">
           Conoce a nuestros estudiantes
         </h2>
-          <div className="flex gap-[35px] justify-center items-center ">
-            {alumniData.map((alumni, index) => {
-              const isCenterGroup =
-                index === visibleIndex ||
-                index === visibleIndex + 1 ||
-                index === visibleIndex - 1;
+        <div className="flex gap-[35px] justify-center items-center">
+          {alumniData.map((alumni, index) => {
+            const isCenterGroup =
+              index === visibleIndex ||
+              index === visibleIndex + 1 ||
+              index === visibleIndex - 1;
 
-              return (
-                <div
-                  key={index}
-                  className={`snap-center flex-shrink-0 transition-transform duration-300 w-[320px] ${
-                    isCenterGroup
-                      ? "opacity-100 translate-y-0 scale-105" 
-                      : "opacity-30 translate-y-6 scale-95" 
-                  }`}
-                >
-                  <AlumniCard
-                    name={alumni.name}
-                    surname={alumni.surname}
-                    generation={alumni.generation}
-                    internship={alumni.internship}
-                    finalDegreeThesis={alumni.finalDegreeThesis}
-                    master={alumni.master}
-                    work={alumni.work}
-                  />
-                </div>
-              );
-            })}
-          </div>
+            return (
+              <div
+                key={index}
+                className={`snap-center flex-shrink-0 transition-transform duration-300 w-[320px] ${
+                  isCenterGroup
+                    ? "opacity-100 translate-y-0 scale-105"
+                    : "opacity-30 translate-y-6 scale-95"
+                }`}
+              >
+                <AlumniCard
+                  name={alumni.name}
+                  surname={alumni.surname}
+                  generation={alumni.generation}
+                  internship={alumni.internship}
+                  finalDegreeThesis={alumni.finalDegreeThesis}
+                  master={alumni.master}
+                  work={alumni.work}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Alumni Reviews Section */}
+      <div className="py-10 bg-gray-100">
+        <h2 className="text-center text-2xl font-semibold mb-6">
+          Opiniones de nuestros estudiantes
+        </h2>
+        <div className="flex flex-wrap gap-10 justify-center">
+          {reviewsData.map((review, index) => (
+            <AlumniReview
+              key={index}
+              name={review.name}
+              surname={review.surname}
+              generation={review.generation}
+              description={review.description}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
