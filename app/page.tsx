@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import AlumniCard from "@/components/AlumniCard";
+import AlumniCard from "@/components/alumni_card/AlumniCard";
 import AlumniReview from "@/components/AlumniReview";
 import CompanyLogo from "@/components/CompanyLogo";
 import BannerMainStats from "@/components/BannerMainStats";
