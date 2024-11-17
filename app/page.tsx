@@ -61,14 +61,14 @@ export default function Home() {
       surname: "Gris",
       generation: 2021,
       description:
-        "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
+        "Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
     },
     {
       name: "Laura",
       surname: "Smith",
       generation: 2024,
       description:
-        "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
+        "Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
     },
   ];
 
@@ -87,8 +87,8 @@ export default function Home() {
 
       <BannerMainStats />
 
-      <section className="text-center py-6">
-        <h2>Nuestros estudiantes trabajan en:</h2>
+      <section className="text-center text-xl font-semibold mb-6 py-4">
+        <h2>Els nostres estudiants treballen a :</h2>
         <div className="flex flex-row gap-4 justify-center py-2">
           <CompanyLogo image="/google.png" />
           <CompanyLogo image="/google.png" />
@@ -97,9 +97,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="py-10">
-        <h2 className="text-center text-2xl font-semibold mb-6">
-          Conoce a nuestros estudiantes
+      <section className="py-4">
+        <h2 className="text-center text-xl font-semibold mb-6">
+          Coneix als nostres estudiants
         </h2>
         <div className="flex gap-[35px] justify-center items-center">
           {alumniData.map((alumni, index) => {
@@ -130,12 +130,12 @@ export default function Home() {
             );
           })}
         </div>
-      </div>
+      </section>
 
-      {/* Alumni Reviews Section */}
-      <div className="py-10 bg-gray-100">
-        <h2 className="text-center text-2xl font-semibold mb-6">
-          Opiniones de nuestros estudiantes
+      <section className="py-40">
+        <div className = "bg-gray-100 py-4">
+        <h2 className="text-center text-xl font-semibold mb-6">
+          Opinions dels nostres estudiants
         </h2>
         <div className="flex flex-wrap gap-10 justify-center">
           {reviewsData.map((review, index) => (
@@ -148,7 +148,8 @@ export default function Home() {
             />
           ))}
         </div>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }
