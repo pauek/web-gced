@@ -13,7 +13,13 @@ export default function AlumniTopPart({
 }: AlumniTopPartProps) {
   return (
     <div className="flex items-center gap-[20px] p-[20px] pb-0">
-        <PersonIcon />
+        <div
+            className="flex justify-center items-center flex-shrink-0 rounded-[90px] bg-[#B0DAED]"
+            style={{width: `75px`, height: `75px`}}
+        >
+            <PersonIcon />
+        </div>
+        
         <div className="flex flex-col justify-center items-center gap-[9px]">
             <p className="text-black text-[14px] font-bold leading-normal">
                 {name}{surname}
