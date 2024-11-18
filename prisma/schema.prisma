@@ -19,4 +19,43 @@ model Alumni {
     review          String?
     tfgTitle        String
     tfgDescription  String
+    internships     Internship[]
+    masters         Master[]
+    projects        Project[]
+}
+
+model Organization {
+    id              Int     @id @default(autoincrement())
+    name            String
+    description     String?
+    internships     Internship[]
+    masters         Master[]
+}
+
+model Internship {
+    id              Int     @id @default(autoincrement())
+    organization    Organization @relation(fields: [organizationId], references: [id])
+    organizationId  Int
+    position        String
+    description     String
+    alumni          Alumni  @relation(fields: [alumniId], references: [id])
+    alumniId        Int
+}
+
+model Master {
+    id              Int     @id @default(autoincrement())
+    organization    Organization @relation(fields: [organizationId], references: [id])
+    organizationId  Int
+    name            String
+    description     String?
+    alumni          Alumni @relation(fields: [alumniId], references: [id])
+    alumniId        Int
+}
+
+model Project {
+    id              Int     @id @default(autoincrement())
+    name            String
+    description     String?
+    alumni          Alumni @relation(fields: [alumniId], references: [id])
+    alumniId        Int
 }
