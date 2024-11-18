@@ -33,17 +33,21 @@ export default function AlumniCard({
     <div className="rounded-[15px] border border-[#B0DAED] bg-white overflow-hidden w-80 h-[290px] flex-shrink-0">
       <div className="flex w-[275px] flex-col items-start gap-[10px]">
         <AlumniTopPart name={name} surname={surname} generation={generation}/>
-        <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
-          <div className="flex flex-col justify-center items-start gap-[13px]">
+        <div className="flex flex-col justify-center items-start">
+          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
             <InternshipIcon />
-            <TfgIcon />
-            <MasterIcon />
-            <CurrentJobIcon />
-          </div>
-          <div className="flex flex-col justify-center items-start gap-[10px]">
             <InfoCardLine title="Pràctiques" description={internship}/>
+          </div>
+          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
+            <TfgIcon />
             <InfoCardLine title="TFG" description={finalDegreeThesis}/>
+          </div>
+          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
+            <MasterIcon />
             <InfoCardLine title="Màster" description={master}/>
+          </div>
+          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
+            <CurrentJobIcon />
             <InfoCardLine title="Treball Actiu" description={work}/>
           </div>
         </div>

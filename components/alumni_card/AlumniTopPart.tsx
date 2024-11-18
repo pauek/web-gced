@@ -22,7 +22,7 @@ export default function AlumniTopPart({
         
         <div className="flex flex-col justify-center items-center gap-[9px]">
             <p className="text-black text-[14px] font-bold leading-normal">
-                {name}{surname}
+                {name} {surname}
             </p>
             <div className="flex p-[5px] justify-center items-center gap-[10px] rounded-[90px] bg-[#B0DAED]">
                 <p className="text-black font-poppins text-[12px] font-medium leading-normal">
