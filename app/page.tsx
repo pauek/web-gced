@@ -134,20 +134,20 @@ export default function Home() {
 
       <section className="py-40">
         <div className = "bg-gray-100 py-4">
-        <h2 className="text-center text-xl font-semibold mb-6">
+          <h2 className="text-center text-xl font-semibold mb-6">
           Opinions dels nostres estudiants
-        </h2>
-        <div className="flex flex-wrap gap-10 justify-center">
-          {reviewsData.map((review, index) => (
-            <AlumniReview
-              key={index}
-              name={review.name}
-              surname={review.surname}
-              generation={review.generation}
-              description={review.description}
-            />
-          ))}
-        </div>
+          </h2>
+          <div className="flex flex-wrap gap-10 justify-center">
+            {reviewsData.map((review, index) => (
+              <AlumniReview
+                key={index}
+                name={review.name}
+                surname={review.surname}
+                generation={review.generation}
+                description={review.description}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </main>
