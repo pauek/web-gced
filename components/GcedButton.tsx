@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { InfoIcon } from "./icons/InfoIcon";
 
 interface GcedButtonProps {
   children: React.ReactNode;

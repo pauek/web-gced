@@ -25,11 +25,13 @@ model Alumni {
 }
 
 model Organization {
-    id          Int          @id @default(autoincrement())
+    id          Int                   @id @default(autoincrement())
     name        String
+    country     String                @default("Spain")
+    city        String                @default("Barcelona")
     description String?
     internships Internship[]
-    masters     Master[]
+    masters     MasterOrganizations[]
 }
 
 model Internship {
@@ -51,13 +53,20 @@ model InternshipAlumni {
 }
 
 model Master {
-    id             Int            @id @default(autoincrement())
-    organization   Organization   @relation(fields: [organizationId], references: [id])
+    id            Int                   @id @default(autoincrement())
+    name          String
+    description   String?
+    alumni        MasterAlumni[]
+    organizations MasterOrganizations[]
+}
+
+model MasterOrganizations {
+    master         Master       @relation(fields: [masterId], references: [id])
+    masterId       Int
+    organization   Organization @relation(fields: [organizationId], references: [id])
     organizationId Int
-    name           String
-    description    String?
-    alumni         MasterAlumni[]
-    alumniId       Int
+
+    @@id([masterId, organizationId])
 }
 
 model MasterAlumni {

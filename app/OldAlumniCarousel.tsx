@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { alumniData } from "./page";
+import { alumniData } from "./fake_data";
 import AlumniCard from "@/components/alumni_card/AlumniCard";
 
 export default function OldAlumniCarousel() {
-  const [visibleIndex, setVisibleIndex] = useState(2);
+  const [visibleIndex /*, _setVisibleIndex*/] = useState(2);
 
   return (
     <div className="flex gap-[35px] justify-center items-center">
@@ -23,13 +23,18 @@ export default function OldAlumniCarousel() {
             }`}
           >
             <AlumniCard
-              name={alumni.name}
-              surname={alumni.surname}
+              firstName={alumni.name}
+              lastName={alumni.surname}
               generation={alumni.generation}
-              internship={alumni.internship}
-              finalDegreeThesis={alumni.finalDegreeThesis}
-              master={alumni.master}
-              work={alumni.work}
+              // internship={alumni.internship}
+              // finalDegreeThesis={alumni.finalDegreeThesis}
+              masters={[{ name: alumni.master }]}
+              // work={alumni.work}
+			  linkedInURL=""
+			  id={9999}
+			  review=""
+			  tfgDescription=""
+			  tfgTitle=""
             />
           </div>
         );

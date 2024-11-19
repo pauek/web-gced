@@ -1,83 +1,17 @@
-"use client";
-
-import { useState } from "react";
 import AlumniCard from "@/components/alumni_card/AlumniCard";
 import AlumniReview from "@/components/AlumniReview";
-import CompanyLogo from "@/components/CompanyLogo";
 import BannerMainStats from "@/components/BannerMainStats";
+import CompanyLogo from "@/components/CompanyLogo";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+import { dbAlumniGetAllCardsInfo } from "@/lib/db/alumni";
+import { reviewsData } from "./fake_data";
 
-export const alumniData = [
-  {
-    name: "Laura",
-    surname: "Smith",
-    generation: 2024,
-    internship: "StartUpX",
-    finalDegreeThesis: "Análisis de datos sociales",
-    master: "AI y Machine Learning",
-    work: "Científica de datos",
-  },
-  {
-    name: "Ignacio",
-    surname: "Gris",
-    generation: 2021,
-    internship: "AiBall",
-    finalDegreeThesis: "No especificado",
-    master: "De la vida",
-    work: "No especificado",
-  },
-  {
-    name: "Maria",
-    surname: "Risques",
-    generation: 2025,
-    internship: "Mango",
-    finalDegreeThesis: "No especificado",
-    master: "No especificado",
-    work: "Data Scientist",
-  },
-  {
-    name: "Juan",
-    surname: "Pérez",
-    generation: 2022,
-    internship: "Tech Corp",
-    finalDegreeThesis: "Optimización de datos",
-    master: "Big Data",
-    work: "Ingeniero de datos",
-  },
-  {
-    name: "Laura",
-    surname: "Smith",
-    generation: 2024,
-    internship: "StartUpX",
-    finalDegreeThesis: "Análisis de datos sociales",
-    master: "AI y Machine Learning",
-    work: "Científica de datos",
-  },
-];
-
-export default function Home() {
-  const reviewsData = [
-    {
-      name: "Ignacio",
-      surname: "Gris",
-      generation: 2021,
-      description:
-        "Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
-    },
-    {
-      name: "Laura",
-      surname: "Smith",
-      generation: 2024,
-      description:
-        "Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
-    },
-  ];
+export default async function Home() {
+  const alumniData = await dbAlumniGetAllCardsInfo();
 
   return (
     <main>
@@ -86,7 +20,8 @@ export default function Home() {
           Grau en Ciència i Enginyeria de Dades
         </h1>
         <p className="py-2 text-lg text-[#007BC0]">
-          Converteixte en líder de l'era digital on les dades creen solucions
+          Converteixte en líder de l&apos;era digital on les dades creen
+          solucions
         </p>
       </section>
 
