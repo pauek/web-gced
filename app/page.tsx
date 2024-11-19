@@ -5,56 +5,63 @@ import AlumniCard from "@/components/alumni_card/AlumniCard";
 import AlumniReview from "@/components/AlumniReview";
 import CompanyLogo from "@/components/CompanyLogo";
 import BannerMainStats from "@/components/BannerMainStats";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+export const alumniData = [
+  {
+    name: "Laura",
+    surname: "Smith",
+    generation: 2024,
+    internship: "StartUpX",
+    finalDegreeThesis: "Análisis de datos sociales",
+    master: "AI y Machine Learning",
+    work: "Científica de datos",
+  },
+  {
+    name: "Ignacio",
+    surname: "Gris",
+    generation: 2021,
+    internship: "AiBall",
+    finalDegreeThesis: "No especificado",
+    master: "De la vida",
+    work: "No especificado",
+  },
+  {
+    name: "Maria",
+    surname: "Risques",
+    generation: 2025,
+    internship: "Mango",
+    finalDegreeThesis: "No especificado",
+    master: "No especificado",
+    work: "Data Scientist",
+  },
+  {
+    name: "Juan",
+    surname: "Pérez",
+    generation: 2022,
+    internship: "Tech Corp",
+    finalDegreeThesis: "Optimización de datos",
+    master: "Big Data",
+    work: "Ingeniero de datos",
+  },
+  {
+    name: "Laura",
+    surname: "Smith",
+    generation: 2024,
+    internship: "StartUpX",
+    finalDegreeThesis: "Análisis de datos sociales",
+    master: "AI y Machine Learning",
+    work: "Científica de datos",
+  },
+];
 
 export default function Home() {
-  const alumniData = [
-    {
-      name: "Laura",
-      surname: "Smith",
-      generation: 2024,
-      internship: "StartUpX",
-      finalDegreeThesis: "Análisis de datos sociales",
-      master: "AI y Machine Learning",
-      work: "Científica de datos",
-    },
-    {
-      name: "Ignacio",
-      surname: "Gris",
-      generation: 2021,
-      internship: "AiBall",
-      finalDegreeThesis: "No especificado",
-      master: "De la vida",
-      work: "No especificado",
-    },
-    {
-      name: "Maria",
-      surname: "Risques",
-      generation: 2025,
-      internship: "Mango",
-      finalDegreeThesis: "No especificado",
-      master: "No especificado",
-      work: "Data Scientist",
-    },
-    {
-      name: "Juan",
-      surname: "Pérez",
-      generation: 2022,
-      internship: "Tech Corp",
-      finalDegreeThesis: "Optimización de datos",
-      master: "Big Data",
-      work: "Ingeniero de datos",
-    },
-    {
-      name: "Laura",
-      surname: "Smith",
-      generation: 2024,
-      internship: "StartUpX",
-      finalDegreeThesis: "Análisis de datos sociales",
-      master: "AI y Machine Learning",
-      work: "Científica de datos",
-    },
-  ];
-
   const reviewsData = [
     {
       name: "Ignacio",
@@ -71,8 +78,6 @@ export default function Home() {
         "Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.",
     },
   ];
-
-  const [visibleIndex, setVisibleIndex] = useState(2);
 
   return (
     <main>
@@ -97,59 +102,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-4">
+      <section className="py-4 overflow-clip">
         <h2 className="text-center text-xl font-semibold mb-6">
           Coneix als nostres estudiants
         </h2>
-        <div className="flex gap-[35px] justify-center items-center">
-          {alumniData.map((alumni, index) => {
-            const isCenterGroup =
-              index === visibleIndex ||
-              index === visibleIndex + 1 ||
-              index === visibleIndex - 1;
-
-            return (
-              <div
-                key={index}
-                className={`snap-center flex-shrink-0 transition-transform duration-300 w-[320px] ${
-                  isCenterGroup
-                    ? "opacity-100 translate-y-0 scale-105"
-                    : "opacity-30 translate-y-6 scale-95"
-                }`}
-              >
-                <AlumniCard
-                  name={alumni.name}
-                  surname={alumni.surname}
-                  generation={alumni.generation}
-                  internship={alumni.internship}
-                  finalDegreeThesis={alumni.finalDegreeThesis}
-                  master={alumni.master}
-                  work={alumni.work}
-                />
-              </div>
-            );
-          })}
-        </div>
+        <Carousel>
+          <CarouselContent>
+            {/* <CarouselItem><div className="w-0"></div></CarouselItem> */}
+            {alumniData.map((alumni, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <AlumniCard {...alumni} />
+              </CarouselItem>
+            ))}
+            {/* <CarouselItem></CarouselItem> */}
+          </CarouselContent>
+        </Carousel>
       </section>
 
       <section className="py-40">
-        <div className = "bg-gray-100 py-4">
+        <div className="bg-gray-100 py-4">
           <h2 className="text-center text-xl font-semibold mb-6">
-          Opinions dels nostres estudiants
+            Opinions dels nostres estudiants
           </h2>
-          <div className="flex flex-wrap gap-10 justify-center">
-            {reviewsData.map((review, index) => (
-              <AlumniReview
-                key={index}
-                name={review.name}
-                surname={review.surname}
-                generation={review.generation}
-                description={review.description}
-              />
-            ))}
-          </div>
+          <Carousel>
+            <CarouselContent>
+              {reviewsData.map((review, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <AlumniReview {...review} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          <div className="flex flex-row gap-10 justify-center"></div>
         </div>
       </section>
+
+      {/* <section>
+        <Carousel>
+          <CarouselContent>
+            <CarouselItem className="basis-1/2 lg:basis-1/3">
+              <div className="debug h-[10em] flex flex-col justify-center items-center text-3xl">
+                1
+              </div>
+            </CarouselItem>
+            <CarouselItem className="basis-1/2 lg:basis-1/3">
+              <div className="debug h-[10em] flex flex-col justify-center items-center text-3xl">
+                2
+              </div>
+            </CarouselItem>
+            <CarouselItem className="basis-1/2 lg:basis-1/3">
+              <div className="debug h-[10em] flex flex-col justify-center items-center text-3xl">
+                3
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
+      </section> */}
+
+      <section className="h-20"></section>
     </main>
   );
 }
