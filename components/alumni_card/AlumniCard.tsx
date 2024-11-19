@@ -1,12 +1,8 @@
 import CurrentJobIcon from "@/components/icons/CurrentJobIcon";
-import InformationIcon from "@/components/icons/InformationIcon";
-import PersonIcon from "@/components/icons/PersonIcon";
 import InternshipIcon from "@/components/icons/InternshipIcon";
 import MasterIcon from "@/components/icons/MasterIcon";
 import TfgIcon from "@/components/icons/TfgIcon";
-
 import GcedButton from "@/components/GcedButton";
-
 import AlumniTopPart from "@/components/alumni_card/AlumniTopPart";
 import InfoCardLine from "@/components/alumni_card/InfoCardLine";
 
