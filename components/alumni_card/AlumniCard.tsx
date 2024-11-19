@@ -6,16 +6,9 @@ import GcedButton from "@/components/GcedButton";
 import AlumniTopPart from "@/components/alumni_card/AlumniTopPart";
 import InfoCardLine from "@/components/alumni_card/InfoCardLine";
 import { InfoIcon } from "../icons/InfoIcon";
+import { alumniData } from "@/app/page";
 
-interface AlumniCardProps {
-  name: string;
-  surname: string;
-  generation: number;
-  internship: string;
-  finalDegreeThesis: string;
-  master: string;
-  work: string;
-}
+type AlumniCardProps = (typeof alumniData)[0];
 
 export default function AlumniCard({
   name,
@@ -27,26 +20,31 @@ export default function AlumniCard({
   work,
 }: AlumniCardProps) {
   return (
-    <div className="rounded-[15px] border border-[#B0DAED] bg-white overflow-hidden w-80 h-[290px] flex-shrink-0">
-      <div className="flex w-[275px] flex-col items-start gap-[10px]">
+    <div className="rounded-[15px] border border-[#B0DAED] bg-white overflow-hidden h-[290px]">
+      <div className="flex flex-col items-start gap-[0.4em]">
         <AlumniTopPart name={name} surname={surname} generation={generation} />
         <div className="flex flex-col justify-center items-start">
-          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
-            <InternshipIcon />
-            <InfoCardLine title="Pràctiques" description={internship} />
-          </div>
-          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
-            <TfgIcon />
-            <InfoCardLine title="TFG" description={finalDegreeThesis} />
-          </div>
-          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
-            <MasterIcon />
-            <InfoCardLine title="Màster" description={master} />
-          </div>
-          <div className="flex items-end justify-center gap-[15px] px-[30px] py-[5px]">
-            <CurrentJobIcon />
-            <InfoCardLine title="Treball Actiu" description={work} />
-          </div>
+          <InfoCardLine
+            icon={<InternshipIcon />}
+            title="Pràctiques"
+            description={internship}
+          />
+          <InfoCardLine
+            icon={<TfgIcon />}
+            title="TFG"
+            description={finalDegreeThesis}
+          />
+          <InfoCardLine
+            icon={<MasterIcon />}
+            title="Màster"
+            description={master}
+          />
+
+          <InfoCardLine
+            icon={<CurrentJobIcon />}
+            title="Treball Actiu"
+            description={work}
+          />
         </div>
       </div>
       <div className="flex w-full justify-center items-center mt-[10px]">
