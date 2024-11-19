@@ -41,3 +41,4 @@ next-env.d.ts
 
 # Avoid committing the DB
 ./prisma/dev.db
+./prisma/*.db-journal

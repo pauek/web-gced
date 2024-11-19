@@ -29,6 +29,8 @@ export default async function Home() {
 
       <section className="text-center text-xl font-semibold mb-6 py-4">
         <h2>Els nostres estudiants treballen a :</h2>
+      <section className="text-center text-xl font-semibold mb-6 py-4">
+        <h2>Els nostres estudiants treballen a :</h2>
         <div className="flex flex-row gap-4 justify-center py-2">
           <CompanyLogo image="/google.png" />
           <CompanyLogo image="/google.png" />
