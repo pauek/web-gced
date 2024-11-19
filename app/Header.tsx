@@ -26,7 +26,7 @@ export default function Header() {
   );
 
   return (
-    <header className="flex flex-row gap-2 items-end px-[1em] py-[0.8em] shadow">
+    <header className="flex flex-row gap-2 items-end px-[1em] py-[0.8em] shadow overflow-clip">
       <Link href="/">
         <Image src={LogoUPC} alt="Logo UPC" width={250} height={80} />
       </Link>
