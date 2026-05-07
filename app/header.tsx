@@ -6,7 +6,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
-import Logo from "@/assets/logo-web-gced-optimized.svg"
+import LogoUPC from "@/assets/LogoUPC-full.svg"
+import LogoFIB from "@/assets/fib50.svg"
+import LogoFME from "@/assets/fme.svg"
+import LogoTelecos from "@/assets/telecos.svg"
 
 export default function Header() {
   const pathname = usePathname()
@@ -37,8 +40,11 @@ export default function Header() {
   return (
     <header className={cn("h-20 px-0 py-[0.8em] shadow-lg", "sticky top-0 z-50 bg-white")}>
       <div className="mx-auto flex flex-row items-end gap-2 px-3 lg:w-6xl lg:px-0">
-        <Link href="/">
-          <Image src={Logo} alt="Logotip Web GCED" width={225} height={55} />
+        <Link href="/" className="flex h-14 flex-row justify-center gap-6 *:w-auto">
+          <Image src={LogoUPC} alt="Logotip UPC" />
+          <Image src={LogoFIB} alt="Logotip FIB 50 anys" />
+          <Image src={LogoFME} alt="Logotip FME" />
+          <Image src={LogoTelecos} alt="Logotip Telecos" />
         </Link>
 
         <div onClick={toggleVisible} className="flex flex-1 cursor-pointer flex-row justify-end lg:hidden">
