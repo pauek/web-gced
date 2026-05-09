@@ -1,4 +1,4 @@
-import AlumniPage from "../../components/AlumniPage"
+import AlumniPage from "@/components/AlumniPage"
 import { dbAlumniGetAllCardsInfo, dbAlumniGetAllReviews } from "@/lib/db/alumni"
 
 export const dynamic = "force-dynamic"

@@ -1,4 +1,4 @@
-import ProjectCard from "@/app/projectes/ProjectCard"
+import ProjectCard from "@/app/(main)/projectes/ProjectCard"
 import { dbUniversityProjectsGetAll, UniversityProjectInfo } from "@/lib/db/alumni"
 
 export default async function ProjectsList({ topic }: { topic: string }) {
