@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { AUTH_COOKIE_MAX_AGE, AUTH_COOKIE_NAME } from "@/lib/auth"
+import { AUTH_COOKIE_MAX_AGE, AUTH_COOKIE_NAME, requestOrigin } from "@/lib/auth"
 
 const safeRedirectPath = (raw: string | null | undefined): string => {
   if (!raw) return "/"
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   const from = safeRedirectPath(formData.get("from")?.toString())
 
   const expected = process.env.WEB_PASSWORD
-  const origin = req.nextUrl.origin
+  const origin = requestOrigin(req)
 
   if (!expected || password !== expected) {
     const url = new URL("/login", origin)
