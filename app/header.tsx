@@ -7,9 +7,13 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import LogoUPC from "@/assets/LogoUPC-full.svg"
-import LogoFIB from "@/assets/fib50.svg"
+import LogoFIB50 from "@/assets/fib50.svg"
+import LogoFIBNormal from "@/assets/fib.svg"
 import LogoFME from "@/assets/fme.svg"
 import LogoTelecos from "@/assets/telecos.svg"
+
+const fibStart50Years = Date.UTC(2026, 3, 5)
+const fibEnd50Years = Date.UTC(2027, 3, 5)
 
 export default function Header() {
   const pathname = usePathname()
@@ -37,15 +41,28 @@ export default function Header() {
       {children}
     </Link>
   )
+
+  // Mostra el logo del 50è aniversari de la FIB o el normal en funció de la data
+  const now = Date.now()
+  const logoFIB = now >= fibStart50Years && now <= fibEnd50Years ? LogoFIB50 : LogoFIBNormal
+
   return (
     <header className={cn("h-20 px-0 py-[0.8em] shadow-lg", "sticky top-0 z-50 bg-white")}>
       <div className="mx-auto flex flex-row items-end gap-2 px-3 lg:w-6xl lg:px-0">
-        <Link href="/" className="flex h-14 flex-row justify-center gap-6 *:w-auto">
-          <Image src={LogoUPC} alt="Logotip UPC" />
-          <Image src={LogoFIB} alt="Logotip FIB 50 anys" />
-          <Image src={LogoFME} alt="Logotip FME" />
-          <Image src={LogoTelecos} alt="Logotip Telecos" />
-        </Link>
+        <div className="flex h-14 flex-row gap-6 *:w-auto">
+          <Link href="/" className="mr-4 h-14">
+            <Image src={LogoUPC} alt="Logotip UPC" className="h-14 w-auto" />
+          </Link>
+          <Link href="https://www.fib.upc.edu">
+            <Image src={logoFIB} alt="Logotip FIB" className="h-14 w-auto" />
+          </Link>
+          <Link href="https://telecos.upc.edu">
+            <Image src={LogoTelecos} alt="Logotip Telecos" className="h-14 w-auto" />
+          </Link>
+          <Link href="https://fme.upc.edu">
+            <Image src={LogoFME} alt="Logotip FME" className="h-14 w-auto" />
+          </Link>
+        </div>
 
         <div onClick={toggleVisible} className="flex flex-1 cursor-pointer flex-row justify-end lg:hidden">
           <Menu className="text-upc mx-2 h-13 w-10" />

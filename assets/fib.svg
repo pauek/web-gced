@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In  -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="49.021629mm"
+   height="35mm"
+   viewBox="-16.338 -23.921 185.2786 132.28347"
+   enable-background="new -16.338 -23.921 638 170"
+   xml:space="preserve"
+   id="svg31"
+   sodipodi:docname="fib.svg"
+   inkscape:version="1.4.3 (fcd0343856, 2026-01-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="2.690984"
+   inkscape:cx="18.580564"
+   inkscape:cy="62.6165"
+   inkscape:window-width="2560"
+   inkscape:window-height="1371"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg31"
+   inkscape:document-units="mm" />
+<defs
+   id="defs1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style
+   type="text/css"
+   id="style1">
+	.st0{fill:#696868;}
+	.st1{fill:#E42313;}
+</style><g
+   id="g31"
+   transform="matrix(0.37898504,0,0,0.37898504,-8.5345002,7.1143446)"><polygon
+     class="st0"
+     points="97.6,0.2 97.6,24.6 49.2,24.6 49.2,49.4 97.6,49.4 97.6,73 49.2,73 49.2,122.2 0,122.2 0,0.2 "
+     id="polygon1"
+     transform="scale(1.5160826)" /><rect
+     x="164.34335"
+     y="0"
+     class="st1"
+     width="73.530006"
+     height="185.11368"
+     id="rect1"
+     style="stroke-width:1.51608" /><path
+     class="st0"
+     d="m 413.2841,92.632644 c 25.01537,-6.97398 39.72137,-33.0506 32.59578,-58.065962 C 440.11876,14.251176 421.77417,0.30321651 400.70062,0.15160826 H 258.79529 V 185.11368 h 141.90533 c 26.07662,0 47.15017,-21.07355 46.99856,-47.15017 0,-21.07355 -14.09957,-39.569752 -34.41508,-45.330866 z m -43.05674,56.246666 h -38.96332 v -38.05368 h 38.96332 z m 0,-74.13644 H 331.26404 V 36.840806 h 38.96332 z"
+     id="path1-4"
+     style="stroke-width:1.51608" /></g></svg>
